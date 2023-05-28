@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(221, 221, 221, 0.7);
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(87, 140, 201, 0.7);
+    border-radius: 20px;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 14px;
+  }
+}

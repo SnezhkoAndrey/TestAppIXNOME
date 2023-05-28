@@ -1,0 +1,74 @@
+.table {
+  overflow-x: auto;
+  max-width: 100%;
+
+  .tableHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    gap: 5px;
+
+    .tableItem {
+      color: #999999;
+      font-weight: 700;
+      text-align: left;
+
+      @media (max-width: 650px) {
+        flex-basis: 100px;
+        flex-shrink: 0;
+      }
+
+      &.id {
+        width: 15%;
+      }
+
+      &.client {
+        width: 15%;
+      }
+
+      &.pickup {
+        width: 20%;
+      }
+
+      &.dropoff {
+        width: 20%;
+      }
+
+      &.courier {
+        width: 15%;
+      }
+
+      &.status {
+        width: 10%;
+      }
+    }
+    .addButton {
+      margin-left: auto;
+      padding: 0;
+      height: 26px;
+      width: 26px;
+      min-width: 26px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+      font-weight: 500;
+      font-size: 20px;
+      cursor: pointer;
+
+      &:disabled {
+        border: 2px solid #999999;
+        color: #999999;
+        cursor: default;
+      }
+
+      &:hover {
+        filter: brightness(85%);
+      }
+
+      &:active {
+        filter: brightness(70%);
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.inputsRow {
+  margin: 22px 15px;
+  padding: 14px 0;
+  background-color: #ededed;
+  border-radius: 5px;
+
+  @media (max-width: 800px) {
+    width: 250px;
+    margin: 22px auto;
+  }
+
+  @media (max-width: 600px) {
+    margin: 22px 0;
+  }
+
+  .inputsForm {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    gap: 10px;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
+    .input {
+      text-align: left;
+      border: none;
+      height: 28px;
+      margin: 0 10px;
+      padding-left: 7px;
+
+      @media (max-width: 800px) {
+        width: 150px;
+      }
+
+      &::placeholder {
+        color: #999999;
+        font-size: 11px;
+      }
+
+      &:focus {
+        outline: none;
+
+        &::placeholder {
+          opacity: 0.5;
+        }
+      }
+
+      &.id {
+        width: 10%;
+        margin-left: 22px;
+
+        @media (max-width: 800px) {
+          width: 200px;
+          margin-left: 8px;
+        }
+      }
+
+      &.client {
+        width: 12%;
+
+        @media (max-width: 800px) {
+          width: 200px;
+        }
+      }
+
+      &.pickup {
+        width: 17%;
+
+        @media (max-width: 800px) {
+          width: 200px;
+        }
+      }
+
+      &.dropoff {
+        width: 17%;
+
+        @media (max-width: 800px) {
+          width: 200px;
+        }
+      }
+
+      &.courier {
+        width: 12%;
+
+        @media (max-width: 800px) {
+          width: 200px;
+        }
+      }
+    }
+
+    .addButton {
+      margin-left: auto;
+      margin-right: 22px;
+      padding: 8px 24px;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 11px;
+
+      @media (max-width: 800px) {
+        margin: 0 auto;
+        width: 200px;
+      }
+
+      &:hover {
+        filter: brightness(85%);
+      }
+
+      &:active {
+        filter: brightness(70%);
+      }
+    }
+  }
+}
