@@ -30,9 +30,16 @@ const InputsRow = ({ addingClose }: PropsType) => {
     setInputValue((prev) => ({ ...prev, [name]: value } as ClientsType));
   };
 
+  const randomId = inputValue.id
+    ? inputValue.id
+    : String(Math.random()).split("").slice(2, 8).join("");
+
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setClients(inputValue);
+    setClients({
+      ...inputValue,
+      id: randomId,
+    });
     addingClose();
   };
 

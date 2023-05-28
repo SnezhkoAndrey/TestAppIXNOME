@@ -14,6 +14,10 @@ export const clientsSlice = createSlice({
   reducers: {
     setClientsData: (state, action: PayloadAction<ClientsType>) => {
       state.clients.push(action.payload);
+      localStorage.setItem("clients", JSON.stringify(state.clients));
+    },
+    setClientsStorage: (state, action: PayloadAction<ClientsType[]>) => {
+      state.clients = action.payload;
     },
     setIsOnlineData: (state, action: PayloadAction<string>) => {
       state.clients = changeIsOnline(state.clients, action.payload);
@@ -46,6 +50,7 @@ export const {
   setClientsSearchData,
   setIsOnlineData,
   setTermData,
+  setClientsStorage,
 } = clientsSlice.actions;
 
 export const selectClients = ({ clients }: RootState) =>

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Table.scss";
-import { useAppSelector } from "../../../../hooks/reduxHooks";
-import { selectTerm } from "../../../../redux/clientsSlice";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks";
+import { selectTerm, setClientsStorage } from "../../../../redux/clientsSlice";
 import ClientsTable from "../ClientsTable";
 import InputsRow from "../InputsRow";
+import { ClientsType } from "../../../../types/types";
 
 const Table = () => {
   const [adding, setAdding] = useState(false);
@@ -13,6 +14,20 @@ const Table = () => {
   const addingClose = () => {
     setAdding((prev) => !prev);
   };
+
+  const dispatch = useAppDispatch();
+  const setClients = (clients: ClientsType[]) => {
+    dispatch(setClientsStorage(clients));
+  };
+
+  useEffect(() => {
+    const clients = JSON.parse(
+      localStorage.getItem("clients") as string
+    ) as ClientsType[];
+    if (clients) {
+      setClients(clients);
+    }
+  }, []);
 
   return (
     <>
